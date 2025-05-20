@@ -94,13 +94,13 @@ docker run hello-world
 
 1. Change directory into ~/Repos.
 2. Git clone into ~/Repos folder.
-3. Change directory into new k8s-api-mosquito repo folder.
+3. Change directory into new repo folder.
 4. Start VS Code in the repo folder.
 
 ```shell
 cd ~/Repos
-git clone https://github.com/denisecase/pro-analytics-01-audio-guides
-cd pro-analytics-01-audio-guides
+git clone https://github.com/denisecase/k8s-api-mosquito
+cd k8s-api-mosquito
 code .
 ```
 
