@@ -20,10 +20,9 @@ wsl --update
 wsl
 ```
 
-## 2. Check Ubuntu version - use Ubuntu 22.04+ if possible. Use whichever works. 
+## 2. Check Ubuntu version - use Ubuntu 22.04+ if possible.
 
 ```shell
-wsl -l -v
 lsb_release -a
 ```
 
