@@ -106,7 +106,8 @@ code .
 
 ## Manage Python Virtual Environment: Repeatable Setup
 
-Repeatable as it may take several tries to get consistent versions installed. 
+Use VS Code menu Terminal / New Terminal to run the following commands.
+Click yes to use the new .venv after creating it. 
 
 1. Create a new virtual environment using Python 3.11.
 2. Activate the new virtual environment.
@@ -125,4 +126,12 @@ python3 -m pip install -r requirements.txt --timeout 300 --progress-bar on --no-
 
 python3 -m pip check
 python3 -m pip list > req-installed.txt
+```
+
+## After Making Progress
+
+```shell
+git add .
+git commit -m "did this"
+git push -u origin main
 ```

@@ -1,0 +1,75 @@
+# This .gitignore file lists content that does NOT need to be tracked in the project history
+
+# ----------------------------------------
+# macOS system files (always ignore)
+# ----------------------------------------
+.DS_Store
+
+# ----------------------------------------
+# Visual Studio Code (always ignore)
+# ----------------------------------------
+.vscode/
+
+# ----------------------------------------
+# Environment variables and secrets (always ignore)
+# ----------------------------------------
+.env
+.env.*
+
+# ----------------------------------------
+# Python (ignore for all Python projects)
+# ----------------------------------------
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ----------------------------------------
+# Jupyter Notebook (basic ignore)
+# ----------------------------------------
+.ipynb_checkpoints
+
+# ----------------------------------------
+# Logs, reports, runtime files
+# ----------------------------------------
+*.log
+*.pid
+*.out
+
+# ----------------------------------------
+# Docker (ignore local images & build cache)
+# ----------------------------------------
+*.tar
+*.img
+*.log
+docker-compose.override.yml
+
+# ignore docker build artifacts if any
+build/
+dist/
+
+# ----------------------------------------
+# Kubernetes (ignore local manifests not meant for versioning)
+# ----------------------------------------
+*.yaml~
+*.backup
+*.tmp
+
+# ----------------------------------------
+# OS & Editor-specific
+# ----------------------------------------
+Thumbs.db
+ehthumbs.db
+.idea/
+*.swp
+*.swo
+
+# ----------------------------------------
+# DuckDB database for API (temporary or non-production files)
+# ----------------------------------------
+*.db
+*.duckdb
+
+# EXCEPTION: Keep the shared project file
+!app/mosquito_data.db
