@@ -128,6 +128,12 @@ python3 -m pip check
 python3 -m pip list > req-installed.txt
 ```
 
+## Before Making Changes
+
+```shell
+git pull
+```
+
 ## After Making Progress
 
 ```shell
