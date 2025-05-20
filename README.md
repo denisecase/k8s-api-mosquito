@@ -11,7 +11,7 @@ winget upgrade --id Microsoft.PowerShell --silent --accept-package-agreements --
 
 ---
 
-## 1. On Windows Machines Use WSL
+## On Windows Machines Use WSL
 
 Use Windows Subsystem for Linux. Update (if needed) and launch WSL. 
 
@@ -20,13 +20,13 @@ wsl --update
 wsl
 ```
 
-## 2. Check Ubuntu version - use Ubuntu 22.04+ if possible.
+## Check Ubuntu version - use Ubuntu 22.04+ if possible.
 
 ```shell
 lsb_release -a
 ```
 
-## 3. Tool Installation (Python 3.11)
+## Tool Installation (Python 3.11)
 
 1. Update package lists.
 2. Install Python 3.11 and Development Tools.
@@ -88,4 +88,41 @@ Verify that the installation is successful by running the hello-world image.
 docker version
 docker info
 docker run hello-world
+```
+
+## Clone Project Repo and Open in Code
+
+1. Change directory into ~/Repos.
+2. Git clone into ~/Repos folder.
+3. Change directory into new k8s-api-mosquito repo folder.
+4. Start VS Code in the repo folder.
+
+```shell
+cd ~/Repos
+git clone https://github.com/denisecase/pro-analytics-01-audio-guides
+cd pro-analytics-01-audio-guides
+code .
+```
+
+## Manage Python Virtual Environment: Repeatable Setup
+
+Repeatable as it may take several tries to get consistent versions installed. 
+
+1. Create a new virtual environment using Python 3.11.
+2. Activate the new virtual environment.
+3. Install and upgrade key packages.
+4. Install packages from requirements.txt.
+5. Run pip check.
+6. Save installed versions to req-installed.txt.
+
+
+```shell
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+python3 -m pip install --upgrade pip setuptools wheel
+python3 -m pip install -r requirements.txt --timeout 300 --progress-bar on --no-cache-dir
+
+python3 -m pip check
+python3 -m pip list > req-installed.txt
 ```
