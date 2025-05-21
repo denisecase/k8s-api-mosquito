@@ -38,19 +38,3 @@ spec:
               cpu: "100m"       # 0.1 CPU cores max
               memory: "128Mi"   # 128 MiB RAM max
 
-          # Probes help Kubernetes know the app is healthy and ready
-
-          livenessProbe:
-            httpGet:
-              path: /           # Use root path 
-              port: 8000
-            initialDelaySeconds: 5
-            periodSeconds: 10
-
-          readinessProbe:
-            httpGet:
-              path: /           # Ready if the root endpoint responds
-              port: 8000
-            initialDelaySeconds: 5
-            periodSeconds: 10
-

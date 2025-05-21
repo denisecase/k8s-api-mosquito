@@ -9,15 +9,15 @@ A public-health data microservice deployed to GKE Autopilot using FastAPI, Docke
 
 | URL | Description |
 |-----|-------------|
-| http://34.118.235.124/              | Root endpoint – confirms the API is running |
-| http://34.118.235.124/traps         | Returns the first 100 traps |
-| http://34.118.235.124/traps?limit=5 | Returns the first 5 traps |
-| http://34.118.235.124/traps/1 | Returns the trap with ID 1 |
-| http://34.118.235.124/species | Returns the list of distinct species |
-| http://34.118.235.124/species/Culex%20quinquefasciatus%20-%20Southern%20House%20Mosquito | Returns traps for the given species |
-| http://34.118.235.124/species/INVALID                       | Returns an error with valid species list |
-| http://34.118.235.124/dates?start=2016-01-01&end=2016-12-31 | Returns traps within the date range |
-| http://34.118.235.124/dates?start=1990-01-01&end=2100-01-01 | Returns error showing valid date range |
+| http://34.122.47.29/              | Root endpoint – confirms the API is running |
+| http://34.122.47.29/traps         | Returns the first 100 traps |
+| http://34.122.47.29/traps?limit=5 | Returns the first 5 traps |
+| http://34.122.47.29/traps/1 | Returns the trap with ID 1 |
+| http://34.122.47.29/species | Returns the list of distinct species |
+| http://34.122.47.29/species/Culex%20quinquefasciatus%20-%20Southern%20House%20Mosquito | Returns traps for the given species |
+| http://34.122.47.29/species/INVALID                       | Returns an error with valid species list |
+| http://34.122.47.29/dates?start=2016-01-01&end=2016-12-31 | Returns traps within the date range |
+| http://34.122.47.29/dates?start=1990-01-01&end=2100-01-01 | Returns error showing valid date range |
 
 
 About the data:
