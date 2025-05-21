@@ -156,10 +156,10 @@ kubectl rollout restart deployment mosquito-api
 # Describe the service and get more information 
 kubectl describe service mosquito-api-service
 kubectl get pods
-kubectl logs mosquito-api-58cc5bccb8-l44xp
+kubectl logs mosquito-api-965f96dc9-8478z
 
 # Check the service
 kubectl get service mosquito-api-service
 ```
 
-Visit http://<ExternalIP/>, for example <http://34.46.105.190/>
+Visit http://<ExternalIP/>, for example <http://34.72.163.122/>
