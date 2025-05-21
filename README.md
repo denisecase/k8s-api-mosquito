@@ -162,3 +162,12 @@ git add .
 git commit -m "did this"
 git push -u origin main
 ```
+
+## Project Phases
+
+This project is organized into development phases:
+
+- [Phase 1: Machine & Cloud Setup](./ref_phase1.md)
+- [Phase 2: Project Initialization](./ref_phase2.md)
+- [Phase 3: Vertical Slice Deployment](./ref_phase3.md)
+
