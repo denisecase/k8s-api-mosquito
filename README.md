@@ -5,6 +5,26 @@ A public-health data microservice deployed to GKE Autopilot using FastAPI, Docke
 [![Deploy to GKE](https://img.shields.io/badge/deploy-GKE-green)](https://console.cloud.google.com/)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/downloads/release/python-3110/)
 
+## Deployed API Endpoints
+
+| URL | Description |
+|-----|-------------|
+| http://35.202.31.30/              | Root endpoint – confirms API is running |
+| http://35.202.31.30/traps         | Returns the first 100 traps |
+| http://35.202.31.30/traps?limit=5 | Returns the first 5 traps |
+| http://35.202.31.30/traps/1 | Returns the trap with ID 1 |
+| http://35.202.31.30/species | Returns the list of distinct species |
+| http://35.202.31.30/species/Culex%20quinquefasciatus%20-%20Southern%20House%20Mosquito | Returns traps for the given species |
+| http://35.202.31.30/species/INVALID                       | Returns an error with valid species list |
+| http://35.202.31.30/dates?start=2016-01-01&end=2016-12-31 | Returns traps within the date range |
+| http://35.202.31.30/dates?start=1990-01-01&end=2100-01-01 | Returns error showing valid date range |
+
+About the data:
+
+- MIN_DATE_COLLECTED=2015-01-07
+- MAX_DATE_COLLECTED=2018-08-28
+- Fetched 11925 traps
+- See [Phase 4 DATA](REF_PHASE4+DATA.md) for a list of species
 
 ## Local Machine Setup
 
