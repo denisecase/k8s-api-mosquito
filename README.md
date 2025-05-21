@@ -1,5 +1,23 @@
 # k8s-api-mosquito
 
+A public-health data microservice deployed to GKE Autopilot using FastAPI, Docker, and Kubernetes.
+
+[![Deploy to GKE](https://img.shields.io/badge/deploy-GKE-green)](https://console.cloud.google.com/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue)](https://www.python.org/downloads/release/python-3110/)
+
+
+## Local Machine Setup
+
+For professional Python, Git, and VS Code setup and workflow, see [pro-analytics-01](https://github.com/denisecase/pro-analytics-01). 
+
+We need to install some additional tools to support containerization and Kubernetes deployments.
+
+| Tool             | Purpose                             | Notes |
+|------------------|-------------------------------------|----------------|
+| `Docker`         | Build and run containers            | Use Docker Engine (avoid Docker Desktop) |
+| `kubectl`        | Command-line interface to Kubernetes| [Install](https://kubernetes.io/docs/tasks/tools/) |
+| `gh`             | GitHub CLI                          | Helpful for repo management |
+
 ## OPTIONAL. On Windows, Open and Update PowerShell (if needed)
 
 We recommend keeping key tools like PowerShell updated to lastest versions. For example:
@@ -8,8 +26,6 @@ We recommend keeping key tools like PowerShell updated to lastest versions. For 
 winget search Microsoft.PowerShell
 winget upgrade --id Microsoft.PowerShell --silent --accept-package-agreements --accept-source-agreements
 ```
-
----
 
 ## On Windows Machines Use WSL
 
@@ -33,7 +49,7 @@ lsb_release -a
 3. Install helpful tools: curl, unzip
 4. Install GitHub CLI (Command Line Interface)
 5. Install Kubernetes
-6. Uninstall all prior WSL Dockder versions
+6. Uninstall all prior WSL Docker versions
 
 ```shell
 sudo apt-get update -y
@@ -50,8 +66,10 @@ Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg > /dev/null
+
+sudo chmod a+r /usr/share/keyrings/cloud.google.gpg
 ```
 
 Add the repository to Apt sources:
@@ -69,7 +87,7 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-Add your user to the docker group so you don't have to use `sudo` every time:
+Add your user to the docker group so we don't need `sudo` every time:
 
 ```shell
 sudo usermod -aG docker $USER
@@ -82,7 +100,7 @@ exit
 wsl
 ```
 
-Verify that the installation is successful by running the hello-world image.
+Verify that the installation is successful and run the hello-world image.
 
 ```shell
 docker version
@@ -103,6 +121,7 @@ git clone https://github.com/denisecase/k8s-api-mosquito
 cd k8s-api-mosquito
 code .
 ```
+
 
 ## Manage Python Virtual Environment: Repeatable Setup
 
@@ -127,6 +146,8 @@ python3 -m pip install -r requirements.txt --timeout 300 --progress-bar on --no-
 python3 -m pip check
 python3 -m pip list > req-installed.txt
 ```
+
+
 
 ## Before Making Changes
 

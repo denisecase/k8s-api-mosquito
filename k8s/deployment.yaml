@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mosquito-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mosquito-api
+  template:
+    metadata:
+      labels:
+        app: mosquito-api
+    spec:
+      containers:
+        - name: mosquito-api
+          image: us-central1-docker.pkg.dev/elytech-mosquito/mosquito-repo/mosquito-api-ca:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          env:
+            - name: ENVIRONMENT
+              value: "production"
