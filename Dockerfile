@@ -1,6 +1,8 @@
 FROM python:3.11-slim
 
 WORKDIR /app
+COPY ./data/ /app/data
+COPY ./db/ /app/db
 COPY ./app /app/app
 COPY requirements.txt .
 

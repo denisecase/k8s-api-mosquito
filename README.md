@@ -171,3 +171,17 @@ This project is organized into development phases:
 - [Phase 2: Project Initialization](./ref_phase2.md)
 - [Phase 3: Vertical Slice Deployment](./ref_phase3.md)
 
+## Data Set Links
+
+- [CivicData](https://www.civicdata.com/)
+- [San Diego Mosquito Traps Data](https://www.civicdata.com/dataset/county-of-san-diego-deh-routine-mosquito-surveillance-traps/resource/2c88678b-39b0-48a5-b071-d526d994fc42)
+
+Cite: Routine Mosquito Surveillance Traps
+
+> URL: https://www.civicdata.com/api/3/action/datastore_search?resource_id=2c88678b-39b0-48a5-b071-d526d994fc42
+
+> This dataset provides information from approximately 130 active routine surveillance traps set on a weekly or bi-weekly basis for adult mosquitos across San Diego County for the years **2015-current**. After collection, an ecologist counts and classifies the mosquitos. Mosquitos of the appropriate species are then tested in a laboratory for viruses that can be transmitted to people. This data is managed by the San Diego County Vector Control Program and is extracted from the land use and environment database, Accela. This dataset is intended for public access, use, and education. For a description of this data, see Routine Mosquito Surveillance Trap metadata. If additional information is needed please see our [Public Records Request webpage] (https://www.sandiegocounty.gov/content/sdc/deh/doing_business/records.html).
+
+> Note: San Diego County’s Vector Control Program strives to provide complete and accurate data, however, it does not guarantee, either expressed or implied, the accuracy, completeness, or timeliness of the information. The Department of Environmental Health will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information.
+
+> Metadata Created Data: July 2, 2018
