@@ -130,7 +130,7 @@ gcloud auth application-default login --no-launch-browser
 ```
 
 1. Rebuild and re-push the image and restart the deployment.
-2. OPTIONAL: Delete and re-apply the manifests for a clean start
+2. OPTIONAL: Delete and re-apply the manifests for a clean start (NOT optional if Kubernetes yaml files change)
 3. Restart the deployment to apply the new image
 4. OPTIONAL: Describe the service to get more information
 5. OPTIONAL: Use pods info to get hash.
@@ -169,18 +169,18 @@ You should see a message like:
 
 {"message": "Mosquito API is alive!"}
 
-Visit http://<ExternalIP/>, for example <http://35.202.31.30/>
+Visit http://<ExternalIP/>, for example <http://34.118.235.124/>
 
 ## Step 8. Test the Deployed API Endpoints
 
 | URL | Description |
 |-----|-------------|
-| http://35.202.31.30/              | Root endpoint – confirms the API is running |
-| http://35.202.31.30/traps         | Returns the first 100 traps |
-| http://35.202.31.30/traps?limit=5 | Returns the first 5 traps |
-| http://35.202.31.30/traps/1 | Returns the trap with ID 1 |
-| http://35.202.31.30/species | Returns the list of distinct species |
-| http://35.202.31.30/species/Culex%20quinquefasciatus%20-%20Southern%20House%20Mosquito | Returns traps for the given species |
-| http://35.202.31.30/species/INVALID                       | Returns an error with valid species list |
-| http://35.202.31.30/dates?start=2016-01-01&end=2016-12-31 | Returns traps within the date range |
-| http://35.202.31.30/dates?start=1990-01-01&end=2100-01-01 | Returns error showing valid date range |
+| http://34.118.235.124/              | Root endpoint – confirms the API is running |
+| http://34.118.235.124/traps         | Returns the first 100 traps |
+| http://34.118.235.124/traps?limit=5 | Returns the first 5 traps |
+| http://34.118.235.124/traps/1 | Returns the trap with ID 1 |
+| http://34.118.235.124/species | Returns the list of distinct species |
+| http://34.118.235.124/species/Culex%20quinquefasciatus%20-%20Southern%20House%20Mosquito | Returns traps for the given species |
+| http://34.118.235.124/species/INVALID                       | Returns an error with valid species list |
+| http://34.118.235.124/dates?start=2016-01-01&end=2016-12-31 | Returns traps within the date range |
+| http://34.118.235.124/dates?start=1990-01-01&end=2100-01-01 | Returns error showing valid date range |

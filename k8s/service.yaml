@@ -3,10 +3,17 @@ kind: Service
 metadata:
   name: mosquito-api-service
 spec:
-  type: LoadBalancer
+  type: LoadBalancer      # Exposes the service to the internet (creates an external IP)
   selector:
-    app: mosquito-api
+    app: mosquito-api     # Targets the pods with this label
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8000
+      port: 80            # Port exposed to users (HTTP default)
+      targetPort: 8000    # Port used inside the container (FastAPI default)
+
+# Public-facing service to expose the FastAPI app to the internet.
+# GKE will provision an external IP address to forward traffic from port 80 to port 8000.
+
+# The service uses a LoadBalancer type, suitable for production environments.
+# The selector matches the pods with the label app: mosquito-api, ensuring that traffic is directed to the correct pods.
+# The service listens on port 80 (HTTP) and forwards traffic to port 8000 inside the container, where the FastAPI app is running.

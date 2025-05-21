@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: mosquito-api
 spec:
-  replicas: 1
+  # GOAL: Lock down specifications to limit potential charges
+  replicas: 1  # Run only one instance to prevent autoscaling
   selector:
     matchLabels:
       app: mosquito-api
@@ -17,13 +18,39 @@ spec:
           image: us-central1-docker.pkg.dev/elytech-mosquito/mosquito-repo/mosquito-api-ca:latest
           ports:
             - containerPort: 8000
-          resources:
-            requests:
-              cpu: "250m"
-              memory: "256Mi"
-            limits:
-              cpu: "500m"
-              memory: "512Mi"
+
           env:
             - name: ENVIRONMENT
               value: "production"
+
+          resources:
+
+            # Minimum resources guaranteed to this container can be pretty small.
+            # The Kubernetes scheduler uses this to place the container on a node.
+
+            requests:
+              cpu: "50m"        # 0.05 CPU cores (1/20 of a core)
+              memory: "64Mi"    # 64 MiB RAM
+
+            # Maximum allowed resource usage
+            # If the container exceeds these, the container may be throttled or killed
+            limits:
+              cpu: "100m"       # 0.1 CPU cores max
+              memory: "128Mi"   # 128 MiB RAM max
+
+          # Probes help Kubernetes know the app is healthy and ready
+
+          livenessProbe:
+            httpGet:
+              path: /           # Use root path 
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+          readinessProbe:
+            httpGet:
+              path: /           # Ready if the root endpoint responds
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
